@@ -3,269 +3,346 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RyanCxeven | Portfolio</title>
+<title>RyanCxeven | Cybersecurity</title>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+cursor:crosshair;
 }
 
 /* Video Background */
-.video-bg{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-2;
+
+video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+filter:brightness(.35);
 }
 
 .overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.75);
-    z-index:-1;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.65),
+rgba(20,0,0,.75)
+);
+z-index:-1;
 }
 
 /* Navbar */
+
 nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 10%;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.3);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#00bfff;
-    text-shadow:0 0 15px #00bfff;
+font-size:28px;
+font-weight:800;
+color:#ff003c;
+text-shadow:
+0 0 10px #ff003c,
+0 0 30px #ff003c;
 }
 
 nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
+display:flex;
+list-style:none;
+gap:35px;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+color:white;
+text-decoration:none;
+transition:.3s;
 }
 
 nav a:hover{
-    color:#00bfff;
+color:#ff003c;
 }
 
-/* Hero Section */
+/* Hero */
+
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    flex-direction:column;
-    padding:20px;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
 }
 
 .hero h1{
-    font-size:70px;
-    color:#00bfff;
-    text-shadow:0 0 25px #00bfff;
+font-size:7rem;
+letter-spacing:12px;
+color:white;
+text-shadow:
+0 0 15px #ff003c,
+0 0 40px #ff003c,
+0 0 80px #ff003c;
+animation:pulse 3s infinite;
+}
+
+.hero h2{
+margin-top:20px;
+font-size:1.5rem;
+color:#ff003c;
+letter-spacing:6px;
 }
 
 .hero p{
-    margin-top:15px;
-    font-size:20px;
-    color:#ccc;
+margin-top:25px;
+max-width:700px;
+color:#d1d1d1;
+line-height:1.8;
 }
 
 .btn{
-    margin-top:30px;
-    padding:15px 40px;
-    border:2px solid #00bfff;
-    color:#00bfff;
-    text-decoration:none;
-    border-radius:40px;
-    transition:0.4s;
+margin-top:40px;
+padding:15px 45px;
+border:1px solid #ff003c;
+color:#ff003c;
+text-decoration:none;
+transition:.4s;
 }
 
 .btn:hover{
-    background:#00bfff;
-    color:black;
-    box-shadow:0 0 25px #00bfff;
+background:#ff003c;
+color:black;
+box-shadow:0 0 30px #ff003c;
 }
 
-/* Sections */
+/* Section */
+
 section{
-    padding:100px 10%;
+padding:100px 10%;
 }
 
-.section-title{
-    color:#00bfff;
-    margin-bottom:30px;
-    font-size:40px;
-    text-align:center;
+.title{
+text-align:center;
+font-size:3rem;
+color:#ff003c;
+margin-bottom:40px;
 }
 
-/* About */
-.about-box{
-    background:rgba(0,0,0,0.6);
-    border:1px solid #00bfff;
-    border-radius:15px;
-    padding:40px;
-    backdrop-filter:blur(10px);
+.box{
+background:rgba(0,0,0,.55);
+border:1px solid rgba(255,0,60,.4);
+padding:40px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 40px rgba(255,0,60,.15);
 }
 
 /* Skills */
+
 .skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.skill{
-    background:rgba(0,0,0,0.6);
-    border:1px solid #00bfff;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
+.card{
+padding:30px;
+background:rgba(0,0,0,.6);
+border:1px solid rgba(255,0,60,.4);
+text-align:center;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(255,0,60,.4);
+}
+
+.card h3{
+color:#ff003c;
 }
 
 /* Footer */
+
 footer{
-    text-align:center;
-    padding:30px;
-    background:black;
-    border-top:1px solid #00bfff;
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,0,60,.3);
+background:black;
 }
 
-.author{
-    color:#00bfff;
+footer span{
+color:#ff003c;
+}
+
+/* Animations */
+
+@keyframes pulse{
+
+0%,100%{
+text-shadow:
+0 0 15px #ff003c,
+0 0 40px #ff003c,
+0 0 80px #ff003c;
+}
+
+50%{
+text-shadow:
+0 0 30px #ff003c,
+0 0 60px #ff003c,
+0 0 120px #ff003c;
+}
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#ff003c;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-    font-size:45px;
+font-size:3rem;
+letter-spacing:4px;
+}
+
+.hero h2{
+font-size:1rem;
 }
 
 nav{
-    flex-direction:column;
-    gap:20px;
+flex-direction:column;
+gap:15px;
 }
-}
-</style>
 
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- Background Video -->
-<video autoplay muted loop class="video-bg">
-    <source src="bg.mp4" type="video/mp4">
+<video autoplay muted loop>
+<source src="bg.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
-<!-- Navbar -->
 <nav>
-    <div class="logo">RyanCxeven</div>
 
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<div class="logo">
+RyanCxeven
+</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+</ul>
+
 </nav>
 
-<!-- Hero -->
 <section class="hero">
 
-    <h1>RYANCXEVEN</h1>
+<h1>RYANCXEVEN</h1>
 
-    <p>
-        Welcome To My Digital Realm
-    </p>
+<h2>CYBERSECURITY | PURPLE TEAM</h2>
 
-    <a href="#about" class="btn">Explore</a>
+<p>
+Defending Systems • Simulating Threats • Understanding Adversaries
+</p>
+
+<a href="#about" class="btn">
+ENTER
+</a>
 
 </section>
 
-<!-- About -->
 <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+<h2 class="title">
+ABOUT
+</h2>
 
-    <div class="about-box">
+<div class="box">
 
-        <p>
-            [ABOUT ME TEXT YAHAN LIKHNA]
-        </p>
+<p>
+Cybersecurity enthusiast focused on Purple Team operations,
+combining offensive security knowledge with defensive strategies.
+Passionate about threat detection, attack simulation, security
+research, and understanding adversarial behavior in modern
+environments.
+</p>
 
-    </div>
+</div>
 
 </section>
 
-<!-- Skills -->
 <section id="skills">
 
-<h2 class="section-title">Skills</h2>
+<h2 class="title">
+EXPERTISE
+</h2>
 
 <div class="skills">
 
-<div class="skill">
-<h3>Web Development</h3>
+<div class="card">
+<h3>Threat Hunting</h3>
 </div>
 
-<div class="skill">
-<h3>Cyber Security</h3>
+<div class="card">
+<h3>Security Research</h3>
 </div>
 
-<div class="skill">
-<h3>Programming</h3>
+<div class="card">
+<h3>Purple Teaming</h3>
 </div>
 
-<div class="skill">
-<h3>UI / UX Design</h3>
+<div class="card">
+<h3>Incident Analysis</h3>
 </div>
 
-</div>
-
-</section>
-
-<!-- Contact -->
-<section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="about-box">
-Email: your@email.com
-<br><br>
-Discord: RyanCxeven
 </div>
 
 </section>
 
 <footer>
-    Designed By
-    <span class="author">RyanCxeven</span>
+© 2026 <span>RyanCxeven</span>
 </footer>
 
 </body>

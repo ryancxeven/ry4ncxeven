@@ -3,31 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RyanCxeven | Cybersecurity</title>
+<title>RYANCXEVEN</title>
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Orbitron',sans-serif;
-}
-
-html{
-scroll-behavior:smooth;
+font-family:Consolas,monospace;
 }
 
 body{
 background:#000;
 color:#fff;
 overflow-x:hidden;
-cursor:crosshair;
 }
-
-/* Video Background */
 
 video{
 position:fixed;
@@ -36,226 +27,150 @@ left:0;
 width:100%;
 height:100%;
 object-fit:cover;
-z-index:-2;
-filter:brightness(.35);
+z-index:-3;
+filter:brightness(.25);
 }
 
 .overlay{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+inset:0;
+background:rgba(0,0,0,.75);
+z-index:-2;
+}
+
+.grid{
+position:fixed;
+inset:0;
 background:
-linear-gradient(
-to bottom,
-rgba(0,0,0,.65),
-rgba(20,0,0,.75)
-);
+linear-gradient(rgba(255,0,0,.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,0,0,.08) 1px, transparent 1px);
+background-size:50px 50px;
 z-index:-1;
 }
 
-/* Navbar */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:25px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.3);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo{
-font-size:28px;
-font-weight:800;
-color:#ff003c;
-text-shadow:
-0 0 10px #ff003c,
-0 0 30px #ff003c;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:35px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ff003c;
-}
-
-/* Hero */
-
-.hero{
-height:100vh;
+.container{
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-flex-direction:column;
-text-align:center;
 padding:20px;
 }
 
-.hero h1{
-font-size:7rem;
-letter-spacing:12px;
-color:white;
-text-shadow:
-0 0 15px #ff003c,
-0 0 40px #ff003c,
-0 0 80px #ff003c;
-animation:pulse 3s infinite;
-}
-
-.hero h2{
-margin-top:20px;
-font-size:1.5rem;
-color:#ff003c;
-letter-spacing:6px;
-}
-
-.hero p{
-margin-top:25px;
-max-width:700px;
-color:#d1d1d1;
-line-height:1.8;
-}
-
-.btn{
-margin-top:40px;
-padding:15px 45px;
-border:1px solid #ff003c;
-color:#ff003c;
-text-decoration:none;
-transition:.4s;
-}
-
-.btn:hover{
-background:#ff003c;
-color:black;
-box-shadow:0 0 30px #ff003c;
-}
-
-/* Section */
-
-section{
-padding:100px 10%;
-}
-
-.title{
-text-align:center;
-font-size:3rem;
-color:#ff003c;
-margin-bottom:40px;
-}
-
-.box{
-background:rgba(0,0,0,.55);
-border:1px solid rgba(255,0,60,.4);
-padding:40px;
-border-radius:15px;
-backdrop-filter:blur(10px);
-box-shadow:0 0 40px rgba(255,0,60,.15);
-}
-
-/* Skills */
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
 .card{
-padding:30px;
-background:rgba(0,0,0,.6);
-border:1px solid rgba(255,0,60,.4);
-text-align:center;
-transition:.4s;
+width:900px;
+max-width:95%;
+background:rgba(0,0,0,.55);
+border:1px solid #ff0033;
+padding:40px;
+backdrop-filter:blur(10px);
+box-shadow:
+0 0 20px #ff0033,
+0 0 60px rgba(255,0,51,.3);
+position:relative;
+overflow:hidden;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(255,0,60,.4);
+.card::before{
+content:'';
+position:absolute;
+left:-100%;
+top:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,0,0,.15),
+transparent
+);
+animation:scan 4s linear infinite;
 }
 
-.card h3{
-color:#ff003c;
+@keyframes scan{
+100%{
+left:100%;
+}
 }
 
-/* Footer */
+.tag{
+color:#ff0033;
+letter-spacing:3px;
+font-size:13px;
+margin-bottom:15px;
+}
+
+h1{
+font-size:80px;
+color:#fff;
+text-shadow:
+0 0 10px #ff0033,
+0 0 30px #ff0033;
+}
+
+.role{
+font-size:24px;
+color:#ff0033;
+margin-top:10px;
+margin-bottom:30px;
+}
+
+.terminal{
+background:#050505;
+border:1px solid #ff0033;
+padding:20px;
+line-height:2;
+color:#ddd;
+}
+
+.red{
+color:#ff0033;
+}
+
+.about{
+margin-top:30px;
+padding:20px;
+border-left:3px solid #ff0033;
+background:rgba(255,0,0,.05);
+}
 
 footer{
-padding:40px;
-text-align:center;
-border-top:1px solid rgba(255,0,60,.3);
-background:black;
+margin-top:30px;
+color:#999;
+font-size:12px;
 }
 
-footer span{
-color:#ff003c;
+.cursor{
+display:inline-block;
+width:10px;
+height:20px;
+background:#ff0033;
+animation:blink .8s infinite;
 }
 
-/* Animations */
-
-@keyframes pulse{
-
-0%,100%{
-text-shadow:
-0 0 15px #ff003c,
-0 0 40px #ff003c,
-0 0 80px #ff003c;
-}
-
+@keyframes blink{
 50%{
-text-shadow:
-0 0 30px #ff003c,
-0 0 60px #ff003c,
-0 0 120px #ff003c;
+opacity:0;
 }
-}
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:#ff003c;
 }
 
 @media(max-width:768px){
 
-.hero h1{
-font-size:3rem;
-letter-spacing:4px;
+h1{
+font-size:45px;
 }
 
-.hero h2{
-font-size:1rem;
+.role{
+font-size:18px;
 }
 
-nav{
-flex-direction:column;
-gap:15px;
+.card{
+padding:25px;
 }
 
 }
 
 </style>
 </head>
-
 <body>
 
 <video autoplay muted loop>
@@ -263,87 +178,61 @@ gap:15px;
 </video>
 
 <div class="overlay"></div>
+<div class="grid"></div>
 
-<nav>
+<div class="container">
 
-<div class="logo">
-RyanCxeven
+<div class="card">
+
+<div class="tag">
+[SYSTEM ACCESS GRANTED]
 </div>
-
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-</ul>
-
-</nav>
-
-<section class="hero">
 
 <h1>RYANCXEVEN</h1>
 
-<h2>CYBERSECURITY | PURPLE TEAM</h2>
+<div class="role">
+Cybersecurity | Purple Team
+</div>
 
-<p>
-Defending Systems • Simulating Threats • Understanding Adversaries
-</p>
+<div class="terminal">
 
-<a href="#about" class="btn">
-ENTER
-</a>
+<span class="red">root@ryancxeven:~#</span> whoami<br>
+RyanCxeven<br><br>
 
-</section>
+<span class="red">root@ryancxeven:~#</span> status<br>
+Threat Analysis Active<br>
+Security Monitoring Active<br>
+Research Mode Enabled<br><br>
 
-<section id="about">
+<span class="red">root@ryancxeven:~#</span> mission<br>
+Defend. Detect. Simulate.<br>
 
-<h2 class="title">
+<span class="cursor"></span>
+
+</div>
+
+<div class="about">
+
+<h3 style="color:#ff0033;margin-bottom:10px;">
 ABOUT
-</h2>
-
-<div class="box">
+</h3>
 
 <p>
 Cybersecurity enthusiast focused on Purple Team operations,
-combining offensive security knowledge with defensive strategies.
-Passionate about threat detection, attack simulation, security
-research, and understanding adversarial behavior in modern
-environments.
+combining offensive and defensive security strategies.
+Passionate about threat hunting, attack simulation,
+security research and understanding adversarial behavior.
 </p>
 
 </div>
 
-</section>
-
-<section id="skills">
-
-<h2 class="title">
-EXPERTISE
-</h2>
-
-<div class="skills">
-
-<div class="card">
-<h3>Threat Hunting</h3>
-</div>
-
-<div class="card">
-<h3>Security Research</h3>
-</div>
-
-<div class="card">
-<h3>Purple Teaming</h3>
-</div>
-
-<div class="card">
-<h3>Incident Analysis</h3>
-</div>
-
-</div>
-
-</section>
-
 <footer>
-© 2026 <span>RyanCxeven</span>
+© 2026 RYANCXEVEN
 </footer>
+
+</div>
+
+</div>
 
 </body>
 </html>
